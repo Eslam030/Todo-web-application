@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Sticky Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/show todo.css '%}">
+    <link rel="stylesheet" href="{% static 'css/user_page.css '%}">
+    <style>
+        nav ul:hover li {
+            background-color:black
+        }
+        li {
+            cursor: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+         $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+            else {
+                  $('nav').removeClass('black');
+            }
+      })
+    </script>
+</head>
+<body>
+    <div class="wrapper"  >
+        <header  >
+           <nav style="z-index: 99;" >
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>    <link rel="stylesheet" href="{% static 'css/user.css '%}">
+              <div class="logo">
+                 TODO
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li>
+                        <input type="text" placeholder="username" id = "user"> 
+                        <input type="password" placeholder="password" id = "password">
+                        <input type="button" value = "submit" , id = 'button'>
+                    </li>
+                 </ul>
+              </div>
+           </nav>
+        </header>
+     </div>
+</body>
+<script>
+    let check = "{% url 'check' %}"
+    let user_page = "{% url 'user' id=0 %}"
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src = "{% static 'js/login.js' %}"></script>
+</html>
