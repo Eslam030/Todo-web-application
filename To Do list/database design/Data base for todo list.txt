@@ -1,0 +1,58 @@
+DATABASE CREATION 
+
+CREATE TABLE Account (
+  id INT PRIMARY KEY , 
+  name varchar(255) ,
+  email varchar(255) , 
+  password varchar(255)
+) ; 
+CREATE TABLE Owner_todo (
+  id INT , 
+  todo_id INT PRIMARY KEY , 
+  name varchar(255) , 
+  FOREIGN KEY (id) REFERENCES Account(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ;
+CREATE TABLE share (
+  id INT , 
+  todo_id INT , 
+  PRIMARY KEY (id , todo_id) ,
+  FOREIGN KEY (id) REFERENCES Account(id) ON DELETE CASCADE ON UPDATE CASCADE ,
+  FOREIGN KEY (todo_id) REFERENCES Owner_todo(todo_id) ON DELETE CASCADE ON UPDATE CASCADE 
+) ;
+CREATE TABLE content (
+  todo_id INT , 
+  content varchar(255) ,
+  FOREIGN KEY (todo_id) REFERENCES Owner_todo(todo_id) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
+
+
+
+
+https://dbdiagram.io/d
+TABLE Account {
+  id integer [primary key]
+  name varchar
+  Email varchar 
+  Password varchar
+} 
+TABLE OWNER_TODO {
+  ID integer
+  TODO_ID integer [primary key] 
+  Name varchar
+}
+TABLE SHARING {
+  ID integer [primary key]
+  TODO_ID integer [primary key]
+}
+TABLE Content {
+  TODO_ID integer
+  Content varchar
+}
+Ref : SHARING.ID > Account.id 
+Ref : SHARING.TODO_ID > OWNER_TODO.ID
+Ref : OWNER_TODO.ID > Account.id
+Ref : Content.TODO_ID > OWNER_TODO.ID
+
+    

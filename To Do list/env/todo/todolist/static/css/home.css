@@ -1,0 +1,11 @@
+a {
+    color : white ;
+    text-decoration: none;
+    background-color: black;
+    font-size: 1.1rem;
+}
+ul li:hover a {
+    background-color: white ;
+    color : black ;
+    transition: 0.5s;
+}

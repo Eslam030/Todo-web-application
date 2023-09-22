@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Sticky Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/user.css '%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+         $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+            else {
+                  $('nav').removeClass('black');
+            }
+      })
+    </script>
+</head>
+<body>
+    <div class="wrapper"  >
+        <header  >
+           <nav style="z-index: 99;" >
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>
+              <div class="logo">
+                 TODO
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li></li>
+                    <li>Done</li>
+                    <li id = 'create'>Create</li>
+                    <li id = 'logout'>Logout <i class="fa fa-sign-out" aria-hidden="true" style="margin-left:12px;"></i>
+                    </li>
+                 </ul>
+              </div>
+           </nav>
+        </header>
+     </div>
+    <P id = 'name'> Hello Mr</P>
+    <div class = "con">
+    </div>
+    <div class ="back">
+        <div class = "take" style="z-index: 100;">
+            <p class = "text">Enter your todo list name</p>
+            <input type="text" placeholder="Todo Name" id = 'todo_name'>
+            <input type="button" value = "done" id = 'done'>
+        </div>
+    </div>
+</body>
+<script>
+    let data_of_user = "{% url 'data' %}"
+    let add_todo = "{% url 'add_todo' %}"
+    let show = "{% url 'show_todo' id=0 %}"
+    let home = "{% url 'home' %}"
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src = "{% static 'js/user.js' %}"></script>
+</html>
