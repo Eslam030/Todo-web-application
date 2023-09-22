@@ -1,0 +1,252 @@
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top : 30% ;
+    width: 100%;
+}
+#name {
+    font-family: 'raleway';
+    position: absolute;
+    color :black ;
+    font-weight: bold;
+    font-size: 50px;
+    top:20%;
+    left: 5%;
+    margin: 0;
+}
+figure {
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: red;
+    width: 20%;
+    height: 45%;
+    min-width: 230px;
+    min-height: 30px;
+    max-width: 233px;
+    max-height: 260px;
+
+  }
+  figure > * {
+    grid-area: 1/1;
+    transition: .4s;
+  }
+  figure figcaption {
+    display: grid;
+    align-items: end;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0000;
+    padding: .75rem;
+    background: var(--c,#0009);
+    clip-path: inset(0 var(--_i,100%) 0 0);
+    -webkit-mask:
+      linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    -webkit-mask-clip: text, padding-box;
+    margin: -1px;
+  }
+  figure:hover figcaption{
+    --_i: 0%;
+  }
+
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    grid-auto-flow: column;
+    place-content: center;
+    background: #425a52;
+  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: lighter;
+}
+
+header {
+    width: 100%;
+    height: 20vh;
+    background: url(https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-Beautiful-Full-HD-Wallpaper-Download-Free-PIC-WPE0010098.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.content {
+    width: 94%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 16px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    background: #000;
+}
+nav ul :hover  {
+    background: #ffffff;
+    color : #000 ;
+    transition: 0.5s;
+}
+
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;;
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+@media(max-width: 786px) {
+
+    .logo {
+        position: fixed;
+        top: 0;
+        margin-top: 16px;
+    }
+
+    nav ul {
+        max-height: 0px;
+        background: #000;
+    }
+
+    nav.black ul {
+        background: #000;
+    }
+
+    .showing {
+        max-height: 34em;
+    }
+
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+}
+
+.back{
+
+    display: none;
+    background-color: rgba(0 ,0 , 0 , 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    z-index: 999;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.back.animate {
+    transition: 0.5s;
+    display: flex;
+}
+.take {
+    display: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    border-radius: 1.5rem;
+    background-color: white;
+}
+.take.animate{
+    transition: 0.5s;
+    display: flex;
+}
+
+.text {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'raleway';
+    font-weight: bold;
+    text-align: center;
+}
+#done {
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: 50%;
+    margin-left: 25%;
+    color : white ;
+    border-color: transparent;
+    background-color: rgb(34, 145, 213);
+}
+#done:hover {
+    cursor: pointer;
+    background-color: rgb(14, 68, 101);
+    transition: 0.5s;
+}
+#todo_name {
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 10%;
+    text-indent: 10px;
+}

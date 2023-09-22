@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Sticky Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/user.css '%}">
+    <link rel="stylesheet" href="{% static 'css/show todo.css '%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+         $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+            else {
+                  $('nav').removeClass('black');
+            }
+      })
+    </script>
+</head>
+<body>
+    <div class="wrapper"  >
+        <header  >
+           <nav style="z-index: 99;" >
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>    <link rel="stylesheet" href="{% static 'css/user.css '%}">
+              <div class="logo">
+                 TODO
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li id = "lists">Lists</li>
+                    <li>Done</li>
+                    <li id = 'create'>Create</li>
+                    <li>Logout <i class="fa fa-sign-out" aria-hidden="true" style="margin-left:12px;"></i>
+                    </li>
+                 </ul>
+              </div>
+           </nav>
+        </header>
+     </div>
+     <div class = "contt">
+      <div class = "content-card"> 
+      </div>
+     </div>
+
+     <div class ="back">
+      <div class = "take" style="z-index: 100;">
+          <p class = "text">Enter your new task</p>
+          <input type="text" placeholder="Todo Name" id = 'todo_name'>
+          <input type="button" value = "done" id = 'done'>
+      </div>
+  </div>
+</body>
+<script>
+    let data_of_user = "{% url 'get_todo_data'  %}"
+    let add_content = "{% url 'add_content' %}"
+    let delete_content = "{% url 'delete_content' %}"
+    let share_todo = "{% url 'share_todo' %}"
+    let update_content = "{% url 'update_content' %}"
+    let toggle = "{% url 'toggle' %}"
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src = "{% static 'js/show todo.js' %}"></script>
+</html>
